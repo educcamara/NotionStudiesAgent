@@ -1,7 +1,3 @@
-from google.adk.agents.llm_agent import Agent
-from google.adk.tools import google_search
-from notion_studies.notion_tool import notion_tool
-
 
 from google.adk.agents.llm_agent import Agent
 from notion_studies.notion_tool import notion_tool
