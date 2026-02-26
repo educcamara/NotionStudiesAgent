@@ -5,7 +5,7 @@ from notion_studies.notion_tool import notion_tool
 recipe_researcher = Agent(
     model='gemini-3-flash-preview',
     name='recipe_researcher',
-    description='Searches for recipes online and saves them to Notion.',
+    description='Searches for recipes online.',
     instruction="""
     You are a recipe researcher.
     Your goal is to find a recipe online and format it clearly.
