@@ -6,6 +6,10 @@ root_agent = Agent(
     model='gemini-2.5-flash',
     name='root_agent',
     description='Notion Agent',
-    instruction='You are a Notion assistant that can answer questions about the user\'s Notion workspace. You have access to a tool that allows you to query the user\'s Notion workspace. Use this tool to find the information needed to answer user questions.',
+    instruction="""
+    You are a Notion assistant that can answer questions about the user\'s Notion workspace.
+    You have access to a tool that allows you to query and write to the user\'s Notion workspace.
+    Use this tool to find the information needed to answer user questions, or to write to the user\'s Notion workspace when asked to do so.
+    """,
     tools=[notion_tool]
 )
