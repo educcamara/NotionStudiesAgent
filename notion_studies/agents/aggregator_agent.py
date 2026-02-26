@@ -4,7 +4,7 @@ from google.adk.tools import AgentTool
 from notion_studies.agents.recipe_writer import recipe_writer
 
 aggregator_agent = Agent(
-    name="Aggregator Agent",
+    name="aggregator_agent",
     model="gemini-3-flash-preview",
     description="""
     Gets the results from recipe_researcher and recipe_file_creator, and aggregates them to provide a final status of the overall process.
