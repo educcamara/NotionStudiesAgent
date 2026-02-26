@@ -37,7 +37,8 @@ If the recipe is found, return:
 If the recipe is not found, return:
 
 {
-    "status": "not found"
+    "status": "not found",
+    "recipe_name": "<name of the recipe that was searched>"
 }
 
 Error Handling:
@@ -46,6 +47,7 @@ If the Notion tool fails or returns an unexpected error, return:
 
 {
     "status": "error"
+    "description": "<brief description of the error>"
 }
 
 Do not include any text outside the JSON response.
