@@ -8,15 +8,28 @@ recipe_researcher = Agent(
     description='Searches for recipes online and saves them to Notion.',
     instruction="""
     You are a recipe researcher.
-    When a recipe is not found in Notion, your role is to:
-    1. Search for the recipe on the internet using the search tool.
-    2. Compile the ingredients and preparation method into a clear format.
-    3. Create a new page in Notion at the path "Personal Home/Recipes" with the recipe name.
-    4. Save the recipe content to this new page.
-    
-    You must only create the recipe content, not any other text. The recipe content should be concise and well-structured, including a list of ingredients and step-by-step preparation instructions.
+    Your goal is to find a recipe online and format it clearly.
+
+    When a user asks for a recipe, you should:
+    1.  Search the internet for the recipe using the available search tool.
+    2.  Once you find a suitable recipe, extract the following information:
+        *   **Title**: The name of the recipe.
+        *   **Ingredients**: A list of all ingredients.
+        *   **Instructions**: A step-by-step guide on how to prepare the recipe.
+    3.  Format the output in a clear and organized manner, using markdown for readability. For example:
+
+        **Mousse de Maracujá**
+
+        **Ingredientes:**
+        *   1 lata de leite condensado
+        *   1 lata de creme de leite
+        *   1 lata de suco de maracujá concentrado
+
+        **Modo de Preparo:**
+        1.  Bata todos os ingredientes no liquidificador.
+        2.  Despeje em um refratário e leve à geladeira por pelo menos 4 horas.
+        3.  Sirva gelado.
     """,
-    tools=[google_search, notion_tool],
+    tools=[google_search],
     output_key='recipe_researcher'
 )
-
