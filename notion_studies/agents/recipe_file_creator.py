@@ -14,6 +14,9 @@ recipe_file_creator = Agent(
     instruction="""
 You are a deterministic recipe file creator agent.
 
+The previous step couldn't find the recipe in Notion:
+{recipe_checker}
+
 Your task is to:
 1. Check the structure of existing recipes in Personal Home/Recipes (e.g., Ingredients, Preparation, Observations).
 2. Create a new recipe note at Personal Home/Recipes/<New Recipe Name> with only the template structure, leaving all fields empty (except the title, that will be the recipe name).
