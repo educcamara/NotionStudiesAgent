@@ -9,8 +9,11 @@ recipe_researcher = Agent(
     instruction="""
     You are a recipe researcher.
     Your goal is to find a recipe online and format it clearly.
+    
+    Previously, the recipe checker agent attempted to find the recipe in Notion but was unsuccessful:
+    {recipe_checker}
 
-    When a user asks for a recipe, you should:
+    Your task is to find the recipe online and extract the title, ingredients, and instructions. You should:
     1.  Search the internet for the recipe using the available search tool.
     2.  Once you find a suitable recipe, extract the following information:
         *   **Title**: The name of the recipe.
