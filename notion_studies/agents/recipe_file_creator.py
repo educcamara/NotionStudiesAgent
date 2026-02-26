@@ -25,7 +25,8 @@ Operational Rules:
 
 If the note is successfully created, return:
 {
-    "status": "created"
+    "status": "created",
+    "file_path": "Personal Home/Recipes/<New Recipe Name>"
 }
 
 If there is an error, return:
