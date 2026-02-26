@@ -1,11 +1,16 @@
 from google.adk import Agent
+from google.adk.models import Gemini
 from google.adk.tools import AgentTool
 
 from notion_studies.agents.recipe_writer import recipe_writer
+from notion_studies.util.retry_config import retry_config
 
 aggregator_agent = Agent(
     name="aggregator_agent",
-    model="gemini-3-flash-preview",
+    model=Gemini(
+        model='gemini-3-flash-preview',
+        retry_options=retry_config
+    ),
     description="""
     Gets the results from recipe_researcher and recipe_file_creator, and aggregates them to provide a final status of the overall process.
     """,

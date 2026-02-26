@@ -1,10 +1,15 @@
 from google.adk import Agent
+from google.adk.models import Gemini
 
 from notion_studies.notion_tool import notion_tool
+from notion_studies.util.retry_config import retry_config
 
 recipe_checker = Agent(
-    model='gemini-3-flash-preview',
     name='recipe_checker',
+    model=Gemini(
+        model='gemini-3-flash-preview',
+        retry_options=retry_config
+    ),
     description='Checks if a recipe exists in Notion.',
 
     instruction="""

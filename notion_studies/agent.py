@@ -1,13 +1,18 @@
 from google.adk.agents.llm_agent import Agent
 from google.adk.apps import App
+from google.adk.models import Gemini
 from google.adk.tools import AgentTool
 
 from notion_studies.agents.recipe_checker import recipe_checker
 from notion_studies.agents.sequential_agent import sequential_agent
+from notion_studies.util.retry_config import retry_config
 
 root_agent = Agent(
-    model='gemini-3-flash-preview',
     name='root_agent',
+    model=Gemini(
+        model='gemini-3-flash-preview',
+        retry_options=retry_config
+    ),
     description='Notion Recipe Agent — checks Notion for a recipe and creates it if missing.',
     instruction="""
 You are a recipe assistant that manages a Notion recipe database located at Personal Home/Recipes.

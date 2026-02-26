@@ -1,11 +1,17 @@
 
 from google.adk.agents.llm_agent import Agent
+from google.adk.models import Gemini
+
 from notion_studies.notion_tool import notion_tool
+from notion_studies.util.retry_config import retry_config
 
 # Recipe File Creator Agent
 recipe_file_creator = Agent(
-    model='gemini-3-flash-preview',
     name='recipe_file_creator',
+    model=Gemini(
+        model='gemini-3-flash-preview',
+        retry_options=retry_config
+    ),
     description='Creates a new recipe note in Notion with the same template structure as existing recipes in Personal Home/Recipes. Only populates the template, does not fill in recipe content.',
     instruction="""
 You are a deterministic recipe file creator agent.

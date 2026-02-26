@@ -1,10 +1,15 @@
 from google.adk.agents.llm_agent import Agent
+from google.adk.models import Gemini
 from google.adk.tools import google_search
 from notion_studies.notion_tool import notion_tool
+from notion_studies.util.retry_config import retry_config
 
 recipe_researcher = Agent(
-    model='gemini-3-flash-preview',
     name='recipe_researcher',
+    model=Gemini(
+        model='gemini-3-flash-preview',
+        retry_options=retry_config
+    ),
     description='Searches for recipes online.',
     instruction="""
     You are a recipe researcher.
