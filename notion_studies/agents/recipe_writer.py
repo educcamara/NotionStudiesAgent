@@ -3,7 +3,7 @@ from notion_studies.notion_tool import notion_tool
 
 
 recipe_writer = Agent(
-    model='gemini-3-flash-preview',
+    model='gemini-2.5-flash',
     name='recipe_writer',
     description='Fills the existing recipe template in Notion at Personal Home/Recipes/<Recipe Name> with the provided recipe content.',
     instruction="""

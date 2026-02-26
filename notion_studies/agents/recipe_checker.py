@@ -7,7 +7,7 @@ from notion_studies.util.retry_config import retry_config
 recipe_checker = Agent(
     name='recipe_checker',
     model=Gemini(
-        model='gemini-3-flash-preview',
+        model='gemini-2.5-flash',
         retry_options=retry_config
     ),
     description='Checks if a recipe exists in Notion.',

@@ -8,7 +8,7 @@ from notion_studies.util.retry_config import retry_config
 aggregator_agent = Agent(
     name="aggregator_agent",
     model=Gemini(
-        model='gemini-3-flash-preview',
+        model='gemini-2.5-flash',
         retry_options=retry_config
     ),
     description="""

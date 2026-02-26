@@ -10,7 +10,7 @@ from notion_studies.util.retry_config import retry_config
 root_agent = Agent(
     name='root_agent',
     model=Gemini(
-        model='gemini-3-flash-preview',
+        model='gemini-2.5-pro',
         retry_options=retry_config
     ),
     description='Notion Recipe Agent — checks Notion for a recipe and creates it if missing.',

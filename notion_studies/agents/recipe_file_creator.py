@@ -9,7 +9,7 @@ from notion_studies.util.retry_config import retry_config
 recipe_file_creator = Agent(
     name='recipe_file_creator',
     model=Gemini(
-        model='gemini-3-flash-preview',
+        model='gemini-2.5-flash',
         retry_options=retry_config
     ),
     description='Creates a new recipe note in Notion with the same template structure as existing recipes in Personal Home/Recipes. Only populates the template, does not fill in recipe content.',
