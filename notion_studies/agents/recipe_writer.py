@@ -10,11 +10,8 @@ recipe_writer = Agent(
     instruction="""
 You are a deterministic recipe writing agent.
 
-The previous step couldn't find the recipe in Notion:
-{recipe_checker}
-
 Your task is to:
-1. Receive a complete recipe from the user.
+1. Receive a complete recipe.
 2. Fill the existing template in Personal Home/Recipes/<Recipe Name> with the recipe content, matching the template structure (e.g., Ingredients, Preparation, Observations).
 
 Operational Rules:
