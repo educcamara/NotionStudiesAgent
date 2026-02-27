@@ -17,6 +17,7 @@ Operational Rules:
 - Only fill the template with the recipe content.
 - Do not modify, summarize, or comment.
 - Do not provide suggestions or explanations.
+- DO NOT create a new "Recipes" page. It MUST already exist from the previous step. Your only task is to fill in the content in the existing template.
 
 If the recipe is successfully written, return:
 {

@@ -27,6 +27,7 @@ Operational Rules:
 - Do not fill in any recipe content.
 - Do not modify, summarize, or comment.
 - Do not provide suggestions or explanations.
+- DO NOT create a new "Recipes" page. It MUST already exist. Your only task is to create a new note with the same template structure as the existing recipes, but with empty fields.
 
 If the note is successfully created, return:
 {
