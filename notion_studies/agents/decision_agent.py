@@ -8,7 +8,7 @@ from notion_studies.util.retry_config import retry_config
 decision_agent = Agent(
     name='decision_agent',
     model=Gemini(
-        model='gemini-2.5-pro',
+        model='gemini-2.5-flash',
         retry_options=retry_config
     ),
     description='Evaluates the recipe_checker result and decides whether to return the recipe or trigger the creation pipeline.',

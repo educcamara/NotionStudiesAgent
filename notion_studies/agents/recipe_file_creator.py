@@ -9,7 +9,7 @@ from notion_studies.util.retry_config import retry_config
 recipe_file_creator = Agent(
     name='recipe_file_creator',
     model=Gemini(
-        model='gemini-2.5-pro',
+        model='gemini-2.5-flash',
         retry_options=retry_config
     ),
     description='Creates a new recipe note in Notion with the same template structure as existing recipes in Personal Home/Recipes. Only populates the template, does not fill in recipe content.',
@@ -19,13 +19,16 @@ recipe_file_creator = Agent(
     The previous step couldn't find the recipe in Notion:
     {recipe_checker}
 
-    Your task is to create a new recipe page at Personal Home/Recipes/<Recipe Name>
+    Your task is JUST to create a new recipe page at Personal Home/Recipes/<Recipe Name>
 
     Page title: <Recipe Name>
 
     Steps:
     1. Find the page ID of "Personal Home/Recipes" using API-post-search.
     2. Create a new child page inside it using API-post-page with the blocks above.
+    3. Do NOT fill in any recipe content. Just create the page with the correct title.
+    
+    USE ONLY API-post-search and API-post-page for this task. Do not use any other API methods.
     
     Operational Rules:
     - Do not fill in any recipe content.
