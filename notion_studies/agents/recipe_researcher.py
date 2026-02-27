@@ -7,7 +7,7 @@ from notion_studies.util.retry_config import retry_config
 recipe_researcher = Agent(
     name='recipe_researcher',
     model=Gemini(
-        model='gemini-2.5-flash',
+        model='gemini-2.5-pro',
         retry_options=retry_config
     ),
     description='Searches for recipes online.',

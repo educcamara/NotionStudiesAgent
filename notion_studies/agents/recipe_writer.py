@@ -3,7 +3,7 @@ from notion_studies.notion_tool import notion_tool
 
 
 recipe_writer = Agent(
-    model='gemini-2.5-flash',
+    model='gemini-2.5-pro',
     name='recipe_writer',
     description='Fills the existing recipe template in Notion at Personal Home/Recipes/<Recipe Name> with the provided recipe content.',
     instruction="""
@@ -11,11 +11,12 @@ You are a deterministic recipe writing agent.
 
 Your task is to:
 1. Receive a complete recipe.
-2. Fill the existing template in Personal Home/Recipes/<Recipe Name> with the recipe content, matching the template structure (e.g., Ingredients, Preparation, Observations).
+2. Fill recipe page in Personal Home/Recipes/<Recipe Name> with the recipe content, matching this template structure:
+    - Ingredients
+    - Preparation
+    - Observations
 
 Operational Rules:
-- Only fill the template with the recipe content.
-- Do not modify, summarize, or comment.
 - Do not provide suggestions or explanations.
 - DO NOT create a new "Recipes" page. It MUST already exist from the previous step. Your only task is to fill in the content in the existing template.
 

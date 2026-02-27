@@ -9,7 +9,7 @@ from notion_studies.util.retry_config import retry_config
 recipe_file_creator = Agent(
     name='recipe_file_creator',
     model=Gemini(
-        model='gemini-2.5-flash',
+        model='gemini-2.5-pro',
         retry_options=retry_config
     ),
     description='Creates a new recipe note in Notion with the same template structure as existing recipes in Personal Home/Recipes. Only populates the template, does not fill in recipe content.',
@@ -19,16 +19,9 @@ recipe_file_creator = Agent(
     The previous step couldn't find the recipe in Notion:
     {recipe_checker}
 
-    Your task is to create a new recipe page at Personal Home/Recipes/<Recipe Name> using this EXACT template structure — do not read or inspect existing recipes:
+    Your task is to create a new recipe page at Personal Home/Recipes/<Recipe Name>
 
     Page title: <Recipe Name>
-    Blocks to create (in order):
-    1. Heading 2: "Ingredientes"
-    2. Paragraph: (empty)
-    3. Heading 2: "Modo de Preparo"
-    4. Paragraph: (empty)
-    5. Heading 2: "Observações"
-    6. Paragraph: (empty)
 
     Steps:
     1. Find the page ID of "Personal Home/Recipes" using API-post-search.
