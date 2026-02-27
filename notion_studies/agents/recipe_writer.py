@@ -30,6 +30,6 @@ If there is an error, return:
 
 Do not include any text outside the JSON response.
     """,
-    tools=[notion_tool],
+    tools=[notion_tool()],
     output_key='recipe_writer'
 )
